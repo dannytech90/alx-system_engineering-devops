@@ -1,0 +1,2 @@
+#!/bin/bash
+cut -d: -f1,6 /etc/passwd | sort | paste -d$'\t' - - | sed 's/\t/User: /; s/\t/Home Directory: /'
