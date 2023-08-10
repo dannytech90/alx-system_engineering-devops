@@ -1,0 +1,16 @@
+#!/bin/bash
+
+read -p "Enter words (one word per line, Ctrl+D to finish): " -a words
+
+declare -A word_count
+
+for word in "${words[@]}"; do
+    ((word_count["$word"]++))
+done
+
+for word in "${!word_count[@]}"; do
+    if [ "${word_count[$word]}" -eq 1 ]; then
+        echo "$word"
+    fi
+done | sort
+
