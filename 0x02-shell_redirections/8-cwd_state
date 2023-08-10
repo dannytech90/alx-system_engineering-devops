@@ -1,0 +1,5 @@
+#!/bin/bash
+echo "running script"
+result=$(ls -la)
+echo "$result" > ls_cwd_content
+echo "file written"
