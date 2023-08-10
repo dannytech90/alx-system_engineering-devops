@@ -1,0 +1,5 @@
+#!/bin/bash
+read -p "Enter input: " input
+modified=$(echo "$input" | sed 's/[cC]//g')
+echo "$modified"
+
