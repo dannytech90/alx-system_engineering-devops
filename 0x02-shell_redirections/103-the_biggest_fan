@@ -1,0 +1,21 @@
+#!/bin/bash
+
+if [ $# -ne 1 ]; then
+    echo "Usage: $0 <input_log_file>"
+    exit 1
+fi
+
+input_log="$1"
+
+awk '
+    BEGIN { FS="\t" }
+    {
+        hosts[$1]++
+    }
+    END {
+        for (host in hosts) {
+            print host, hosts[host]
+        }
+    }
+' "$input_log" | sort -k2,2nr | head -n 11
+
