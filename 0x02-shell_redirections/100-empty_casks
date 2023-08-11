@@ -1,0 +1,7 @@
+#!/bin/bash
+
+printEmpty=$( find . -empty -printf "%P\n" )
+
+echo "$printEmpty"
+
+echo "Completed printing empty files and dir"
